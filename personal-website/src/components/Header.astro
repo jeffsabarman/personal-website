@@ -1,26 +1,31 @@
 ---
 import Card from "./Card.astro"
+import {Icon} from "astro-icon/components"
 ---
 
 
-<div class="flex justify-between"> 
-    <div>
-        <h1 class="logo">JTS</h1>
-    </div>
-    <div class="flex gap-4">
-        <a class="menu-text">About</a>
-        <a class="menu-text">Experience</a>
-        <a class="menu-text">Work</a>
-        <a class="menu-text">Contract</a>
+<div class="sticky top-0">
+    <div class=" flex justify-between items-center py-4 px-60"> 
+        <div>
+            <h1 class="logo">JTS</h1>
+        </div>
+        <div class="flex gap-12 items-center">
+            <a class="menu-text text-sm font-normal">About</a>
+            <a class="menu-text text-sm font-normal">Experience</a>
+            <a class="menu-text text-sm font-normal">Work</a>
+            <a class="menu-text text-sm font-normal">Contract</a>
+            <Icon name="ion:contrast" class="text-base text-white cursor-pointer" />
+        </div>
     </div>
 </div>
 <style>
     .logo {
-        color: #FF7F3E
+        color: #FF7F3E;
+        font-size: xx-large;
     }
     .menu-text {
         color: white;
         text-decoration: dashed;
-        font-weight: 500;
+        cursor: pointer;
     }
 </style>

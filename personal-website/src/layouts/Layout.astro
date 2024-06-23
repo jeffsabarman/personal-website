@@ -3,8 +3,9 @@ interface Props {
 	title: string;
 }
 
-import Header from "../components/Header.astro"
-import Hero from "../components/Hero.astro"
+import Header from "@components/Header.astro"
+import Hero from "@components/Hero.astro"
+import Footer from "@components/Footer.astro"
 
 const { title } = Astro.props;
 ---
@@ -22,9 +23,12 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<div class="relative">
-			<Header />
+				<Header />
 			<div class="px-[32rem]">
 				<Hero />
+			</div>
+			<div class="px-60">
+				<Footer />
 			</div>
 		</div>
 	</body>

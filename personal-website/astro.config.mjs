@@ -7,12 +7,17 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [robotsTxt(), tailwind(), icon({
-    include: {
-      mdi: ["*"],
-      mdi: ["account"],
-      ion: ["*"],
-      ion: ["contrast"]
-    }
-  }), react()]
+  integrations: [
+    robotsTxt(),
+    tailwind(),
+    icon({
+      include: {
+        mdi: ["*"],
+        mdi: ["account", "copyright"],
+        ion: ["*"],
+        ion: ["contrast"],
+      },
+    }),
+    react(),
+  ],
 });

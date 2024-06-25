@@ -16,6 +16,7 @@ export default defineConfig({
         mdi: ["account", "copyright"],
         ion: ["*"],
         ion: ["contrast"],
+        weui: ["arrow-outlined", "arrow-filled"],
       },
     }),
     react(),

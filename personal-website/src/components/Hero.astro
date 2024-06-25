@@ -1,28 +1,31 @@
 ---
-import Button from "@components/shared/Button"
-import JobTitle from "@components/JobTitle.astro"
+import Button from "@components/shared/Button";
+import JobTitle from "@components/JobTitle.astro";
+import { Icon } from "astro-icon/components";
 ---
+
 <div class="h-screen flex items-center" id="hero">
-    <div class="flex-col">
-        <p class="text-white font-thin text-sm">Hi, my name is</p>
-        <p class="text-white font-medium text-3xl">Jeffrey Triandi Sabarman</p>
-        <div class="grid gap-8">
-            <!-- <JobTitle /> -->
-            <p class="text-gray font-extralight text-xl">I love to build and design things for the web with great user experience [NOT FIXED]</p>
-            <div class="flex space-x-20">
-                <div>
-                <Button client:visible onClick={() => {
-                    console.log('see my projects')
-                }}>see my projects</Button>
-                </div>
-                <div>
-                 <Button client:visible onClick={() => {
-                    console.log('more about me')
-                }}>more about me</Button>
-                </div>
-            </div>
+  <div class="flex-col">
+    <p class="text-white font-thin text-sm">Hi, my name is</p>
+    <p class="text-white font-medium text-3xl">Jeffrey Triandi Sabarman</p>
+    <div class="grid gap-8">
+      <!-- <JobTitle /> -->
+      <p class="text-gray font-extralight text-xl">
+        I love to build and design things for the web with great user experience
+        [NOT FIXED]
+      </p>
+      <div class="flex space-x-20">
+        <div>
+          <Button client:only route="#projects" label="see my projects">
+            <Icon name={"weui:arrow-filled"} class="text-[4rem]" />
+          </Button>
         </div>
+        <div>
+          <Button client:only route="#about" label="more about me">
+            <Icon name={"weui:arrow-filled"} class="text-[4rem]" />
+          </Button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-
-

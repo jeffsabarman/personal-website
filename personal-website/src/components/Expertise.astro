@@ -1,0 +1,55 @@
+---
+import TitleSection from "@components/shared/TitleSection.astro";
+import { Icon } from "astro-icon/components";
+import { iconsName } from "@helper/index";
+
+const technologies = [
+  [
+    { label: "TypeScript", link: "https://www.typescriptlang.org/" },
+    {
+      label: "JavaScript (ES6+)",
+      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    },
+    { label: "Python", link: "https://www.python.org/" },
+  ],
+  [
+    { label: "Node.js", link: "https://nodejs.org/en" },
+    { label: "Material UI", link: "https://mui.com/" },
+    { label: "Tailwind CSS", link: "https://tailwindcss.com/" },
+  ],
+  [
+    { label: "React", link: "https://react.dev/" },
+    { label: "Next.js", link: "https://nextjs.org/" },
+    { label: "Astro", link: "https://astro.build/" },
+  ],
+];
+---
+
+<div class="flex flex-col space-y-20 py-20">
+  <TitleSection title="Current Technologies" />
+  <div class="flex items-center">
+    {
+      technologies?.map((technologyBatch) => (
+        <div class="flex-grow">
+          <div class="flex flex-col space-y-10">
+            {technologyBatch?.map((technology) => (
+              <a
+                href={technology?.link}
+                target="_blank"
+                class="text-base text-secondary font-light"
+              >
+                <div class="flex space-x-6 items-center">
+                  <div>{technology?.label}</div>
+                  <Icon
+                    name={iconsName?.arrow}
+                    class="text-xl text-secondary"
+                  />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

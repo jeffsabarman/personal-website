@@ -22,14 +22,23 @@
 import type { ReactNode } from "react";
 
 interface ButtonProps {
-  children: ReactNode;
-  onClick: () => void;
+  children?: ReactNode;
+  label: string;
+  route: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ children, route, label }) => {
   return (
-    <button className="text-xl text-blue-light" onClick={onClick}>
-      {children}
+    <button
+      className="text-md text-blue-light"
+      onClick={() => {
+        console.log(route);
+      }}
+    >
+      <div className="flex space-x-4 items-center">
+        <p>{label}</p>
+        <div>{children}</div>
+      </div>
     </button>
   );
 };

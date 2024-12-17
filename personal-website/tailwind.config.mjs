@@ -13,14 +13,14 @@ export default {
       sans: ['"Poppins"', ...defaultTheme.fontFamily.sans],
     },
     colors: {
-      white: "#ffffff",
+      // white: "#ffffff",
       orange: "#FF7F3E",
       "blue-light": "#80C4E9",
     },
     fontSize: {
-      sm: "1.8rem",
-      base: "2.4rem",
-      xl: "2.8rem",
+      sm: "1.2rem",
+      base: "1.8rem",
+      xl: "2.4rem",
       "2xl": "4.8rem",
       "3xl": "7.2rem",
     },

@@ -4,7 +4,7 @@ import {Icon} from "astro-icon/components"
 ---
 
 
-<div class="sticky top-0">
+<!-- <div class="sticky top-0">
     <div class=" flex justify-between items-center py-4 px-60"> 
         <div>
             <h1 class="logo">JTS</h1>
@@ -17,15 +17,26 @@ import {Icon} from "astro-icon/components"
             <Icon name="ion:contrast" class="text-base text-white cursor-pointer" />
         </div>
     </div>
+</div> -->
+<div class="flex justify-between items-center">
+    <p class="text-sm name-text">Jeffrey Sabarman</p>
+    <div class="flex space-x-20">
+        <p class="text-sm">About</p>
+        <p class="text-sm">Projects</p>
+        <!-- <p class="text-sm">Contact</p> -->
+    </div>
 </div>
 <style>
     .logo {
-        color: #FF7F3E;
+        /* color: #FF7F3E; */
         font-size: xx-large;
     }
     .menu-text {
         color: white;
         text-decoration: dashed;
         cursor: pointer;
+    }
+    .name-text {
+        /* color: #E8ECF1 */
     }
 </style>

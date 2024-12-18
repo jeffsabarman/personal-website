@@ -1,0 +1,38 @@
+---
+import ButtonLink from "./shared/ButtonLink.astro"
+import SectionTitle from "./shared/SectionTitle.astro"
+import colors from "tailwindcss/colors"
+
+const skills: string[] = ["JavaScript (ES6+)", "TypeScript", "Python", "React", "Next.js", "Node.js"]
+---
+<div class="flex-col space-y-10">
+    <SectionTitle text="Tech Stack" />
+    <div class="grid grid-cols-3 gap-[1rem]">
+        {
+            skills.map(skill => (
+                // <div class="box">
+                //     <p class="">{skill}</p>
+                // </div>
+                <ButtonLink link="" fullwidth>{skill}</ButtonLink>
+            ))
+        }
+    </div>
+</div>
+<style>
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        /* border: 0.1rem solid theme('colors.default'); */
+        background-color: theme('colors.dark-blue');
+        border-radius: 0.2rem;
+        color: white;
+        /* margin-bottom: 1rem; */
+    }
+    .box:hover {
+        /* background-color: theme('colors.dark-blue'); */
+        cursor: pointer;
+        /* color: white */
+    }
+</style>

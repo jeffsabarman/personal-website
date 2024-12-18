@@ -1,0 +1,82 @@
+---
+import SectionTitle from "./shared/SectionTitle.astro";
+import {Image} from "astro:assets"
+import SWPCImage from "../images/swpc.webp"
+import ComicWikiImage from "../images/comic-wiki.webp"
+import WeddingInvitationImage from "../images/wedding-invitation.webp"
+import ButtonLink from "./shared/ButtonLink.astro";
+
+
+const projects: {title: string, year: number, image: ImageMetadata, desc: string, techStack: string[], link: string}[] = [
+    {
+        title: "Sing With Piano Collections",
+        year: 2022,
+        image: SWPCImage,
+        desc: "Sing with Piano Collections is a website offering high-quality piano accompaniment sheets, as seen on the YouTube channel. This project provided me with the opportunity to work on various aspects, including design, front-end development, authentication and authorization, database management, and payment integration with PayPal.",
+        link: "https://www.singwithpiano-collections.com/",
+        techStack: ["Next.js", "TypeScript", "Material UI", "MongoDB", "Apollo Client", "GraphQL"]
+    },
+    {
+        title: "Wedding Invitation",
+        year: 2023,
+        image: WeddingInvitationImage,
+        desc: "This project is a wedding invitation website created for a happy couple in the UK. It allowed me to develop a static site using Gatsby, optimize images for better performance, incorporate animation effects using Framer Motion, and use the Google Sheets API to store and display guest wishes.",
+        link: "https://main--stephen-candice-wedding-invitation.netlify.app/",
+        techStack: ["Gatsby", "TypeScript", "Material UI", "Framer Motion", "Google Sheets API"]
+    },
+    {
+        title: "Comic Wiki",
+        year: 2021,
+        image: ComicWikiImage,
+        desc: "This project was my first time building a website with React and integrating it with the superhero-api. The website allows users to store and look up details about their chosen hero or villain, and even battle them to determine the winner, all styled with pure CSS!",
+        link: "https://comic-wiki.web.app/",
+        techStack: ["React", "CSS", "API"]
+    }
+]
+
+
+---
+<div class="flex-col space-y-10">
+    <SectionTitle text="Projects" />
+    <div class="grid grid-cols-1 gap-[6rem]">
+        {
+            projects.map(project => (
+                <div class="flex-col gap-4">
+                    {/* <Image src={project.image} alt={project.title} /> */}
+                    <div class="flex-col space-y-6">
+                        <div class="flex-col space-y-4">
+                            <div class="flex justify-between items-end">
+                            <p class="text-sm font-semibold">{project.title}</p>
+                            <p class="opacity-60">{project.year}</p>
+                            </div>
+                            <p class="text-sm">{project.desc}</p>
+                        </div>
+                        <div class="flex space-x-4">
+                                {
+                                    project.techStack.map(tech => (
+                                        <div class="">
+                                            <p class="opacity-60">{tech}</p>
+                                        </div>
+                                    ))
+                                }
+                        </div>
+                        <div>
+                            <ButtonLink link={project.link}>View Live</ButtonLink>
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</div>
+<style>
+    .box-project {
+        height: 24rem;
+        background-color: theme(colors.dark-blue);
+    }
+    .box-tech {
+        padding: 0.5rem;
+        border: 0.1rem solid theme(colors.orange);
+        border-radius: 0.2rem
+    }
+</style>

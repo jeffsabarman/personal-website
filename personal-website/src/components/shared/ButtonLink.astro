@@ -1,0 +1,30 @@
+---
+interface Props {
+    link: string
+    fullwidth?: boolean
+}
+
+const {link, fullwidth} = Astro.props
+---
+<a href={link} target="_blank">
+    <button class={fullwidth ? "w-full": ""}>
+    <p class=""><slot /></p>
+</button>
+</a>
+<style>
+    button {
+        /* background-color: theme('colors.dark-blue'); */
+        /* background-color: #80C4E9; */
+        padding: 0.6rem 1rem;
+        border-radius: 0.2rem;
+        /* color: #ffffff; */
+        color: theme('colors.dark-blue');
+        border: 0.1rem solid theme('colors.dark-blue');
+    }
+    button:hover {
+        /* opacity: 80%; */
+        /* background-color: theme("colors.dark-blue"); */
+        /* color: theme("colors.light-orange"); */
+        background-color: #ecf5fc;
+    }
+</style>

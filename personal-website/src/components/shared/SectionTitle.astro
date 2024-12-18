@@ -6,9 +6,15 @@ interface Props {
 
 const { text } = Astro.props;
 ---
-<div>
-    <p class="text-base font-light">{text}</p>
+<div class="flex-col space-y-2">
+    <p class="text-base">{text}</p>
+    <hr class="w-[2.4rem]" />
 </div>
 <style>
-
+    hr {
+        /* background-color: #295F98; */
+        background-color: #F6995C;
+        border: none;
+        height: 0.16rem;
+    }
 </style>

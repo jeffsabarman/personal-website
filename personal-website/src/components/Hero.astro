@@ -1,8 +1,10 @@
 ---
+import ButtonLink from "./shared/ButtonLink.astro";
+
 
 
 ---
-<div class="py-[4rem] flex-col space-y-[2.8rem]">
+<div class="py-[2rem] flex-col space-y-[2.8rem]">
     <!-- <div class="flex-col">
         <p class="text-white font-thin text-sm">Hi, my name is</p>
         <p class="text-white font-medium text-3xl">Jeffrey Triandi Sabarman</p>
@@ -10,13 +12,22 @@
     </div>
 </div> -->
     <p class="text-xl">I'm a web developer currently doing a master's in Data Science and AI in Liverpool, UK</p>
-    <button>Get in touch!</button>
+    <!-- <button>Get in touch!</button> -->
+     <div>
+         <ButtonLink link="">Get in touch!</ButtonLink>
+     </div>
 </div>
 <style>
     button {
-        background-color: #EF9C66;
+        background-color: theme('colors.dark-blue');
+        /* background-color: #80C4E9; */
         padding: 0.6rem 1rem;
         border-radius: 0.2rem;
         color: #ffffff;
+        /* border: 0.1rem solid theme('colors.dark-blue'); */
+    }
+    button:hover {
+        background-color: theme("colors.dark-blue");
+        /* color: theme("colors.light-orange"); */
     }
 </style>

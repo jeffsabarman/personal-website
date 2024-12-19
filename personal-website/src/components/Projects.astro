@@ -30,7 +30,7 @@ const projects: {title: string, year: number, image: ImageMetadata, desc: string
         image: ComicWikiImage,
         desc: "This project was my first time building a website with React and integrating it with the superhero-api. The website allows users to store and look up details about their chosen hero or villain, and even battle them to determine the winner, all styled with pure CSS!",
         link: "https://comic-wiki.web.app/",
-        techStack: ["React", "CSS", "API"]
+        techStack: ["React", "CSS"]
     }
 ]
 
@@ -55,13 +55,13 @@ const projects: {title: string, year: number, image: ImageMetadata, desc: string
                                 {
                                     project.techStack.map(tech => (
                                         <div class="">
-                                            <p class="opacity-60">{tech}</p>
+                                            <p class="text-orange">{tech}</p>
                                         </div>
                                     ))
                                 }
                         </div>
                         <div>
-                            <ButtonLink link={project.link}>View Live</ButtonLink>
+                            <ButtonLink link={project.link}>View Site</ButtonLink>
                         </div>
                     </div>
                 </div>

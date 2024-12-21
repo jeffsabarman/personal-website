@@ -3,17 +3,24 @@ import ButtonLink from "./shared/ButtonLink.astro"
 import SectionTitle from "./shared/SectionTitle.astro"
 import colors from "tailwindcss/colors"
 
-const skills: string[] = ["JavaScript (ES6+)", "TypeScript", "Python", "React", "Next.js", "Node.js"]
+const skills: {text: string, link: string}[] = [
+    {text: "JavaScript (ES6+)", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"}, 
+    {text: "TypeScript", link: "https://www.typescriptlang.org/"}, 
+    {text: "Python", link: "https://www.python.org/"}, 
+    {text: "React", link: "https://react.dev/"}, 
+    {text: "Next.js", link: "https://nextjs.org/"}, 
+    {text: "Node.js", link: "https://nodejs.org/en"}
+]
 ---
 <div class="flex-col space-y-10">
-    <SectionTitle text="Tech Stack" />
+    <SectionTitle text="Development Stack" />
     <div class="grid grid-cols-3 gap-[1rem]">
         {
             skills.map(skill => (
                 // <div class="box">
                 //     <p class="">{skill}</p>
                 // </div>
-                <ButtonLink link="" fullwidth>{skill}</ButtonLink>
+                <ButtonLink link={skill.link} fullwidth>{skill.text}</ButtonLink>
             ))
         }
     </div>

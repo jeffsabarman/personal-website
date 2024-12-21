@@ -1,6 +1,8 @@
 ---
-import Card from "./Card.astro"
-import {Icon} from "astro-icon/components"
+// import Card from "./Card.astro"
+// import {Icon} from "astro-icon/components"
+import {idContactMenu} from "@utils/shared"
+import ToggleMode from "./ToggleMode"
 ---
 
 
@@ -23,10 +25,13 @@ import {Icon} from "astro-icon/components"
         <p class="text-sm name-text text-dark-blue font-semibold">Jeffrey</p>
         <p class="text-sm name-text text-orange font-semibold ml-8">Sabarman</p>
     </div>
-    <div class="flex space-x-20">
-        <!-- <p class="text-sm">About</p> -->
-        <!-- <p class="text-sm">Projects</p> -->
-        <p class="text-sm">Contact</p>
+    <div class="flex space-x-6">
+        <div class="flex space-x-20">
+            <!-- <p class="text-sm">About</p> -->
+            <!-- <p class="text-sm">Projects</p> -->
+            <p class="text-sm hover:cursor-pointer" id={idContactMenu}>Contact</p>
+        </div>
+        <ToggleMode />
     </div>
 </div>
 <style>
@@ -43,3 +48,12 @@ import {Icon} from "astro-icon/components"
         /* color: #E8ECF1 */
     }
 </style>
+<script>
+import { idContactSection, idContactMenu } from "@utils/shared";
+
+    const contactMenu = document.getElementById(idContactMenu);
+    contactMenu?.addEventListener("click", () => {
+      const contactSection = document.getElementById(idContactSection)
+      contactSection?.scrollIntoView({behavior: "smooth", block: "center"})
+    });
+  </script>

@@ -5,11 +5,12 @@ import type {LucideProps} from "lucide-react"
 // import { Icon } from "astro-icon/components";
 import colors from "tailwindcss/colors";
 import ButtonLink from "./shared/ButtonLink.astro";
+import {linkToEmail, idContactSection} from "@utils/shared"
 
 const socials: {icon: React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>, text: string, link: string}[] = [
     {
         icon: Mail,
-        link: "",
+        link: linkToEmail,
         // text: "jeffsabarman@gmail.com"
         text: "E-mail"
     },
@@ -19,16 +20,21 @@ const socials: {icon: React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> &
         // text: "jeffrey-sabarman"
         text: "LinkedIn"
     },
+    // {
+    //     icon: Instagram,
+    //     link: "https://www.instagram.com/jeffsabarman/",
+    //     // text: "jeffsabarman"
+    //     text: "Instagram"
+    // },
     {
-        icon: Instagram,
-        link: "https://www.instagram.com/jeffsabarman/",
-        // text: "jeffsabarman"
-        text: "Instagram"
-    },
+        icon: Github,
+        link: "https://github.com/jeffsabarman",
+        text: "Github"
+    }
 ]
 
 ---
-<div class="flex-col space-y-12">
+<div class="flex-col space-y-12" id={idContactSection}>
     <SectionTitle text="Connect with me"/>
     <div class="grid grid-cols-3 gap-[1rem]">
         <!-- {

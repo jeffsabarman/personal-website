@@ -1,9 +1,9 @@
 ---
 import SectionTitle from "./shared/SectionTitle.astro";
 import {Image} from "astro:assets"
-import SWPCImage from "../images/swpc.webp"
-import ComicWikiImage from "../images/comic-wiki.webp"
-import WeddingInvitationImage from "../images/wedding-invitation.webp"
+import SWPCImage from "@assets/swpc.webp"
+import ComicWikiImage from "@assets/comic-wiki.webp"
+import WeddingInvitationImage from "@assets/wedding-invitation.webp"
 import ButtonLink from "./shared/ButtonLink.astro";
 
 
@@ -28,16 +28,16 @@ const projects: {title: string, year: number, image: ImageMetadata, desc: string
         title: "Comic Wiki",
         year: 2021,
         image: ComicWikiImage,
-        desc: "This project was my first time building a website with React and integrating it with the superhero-api. The website allows users to store and look up details about their chosen hero or villain, and even battle them to determine the winner, all styled with pure CSS!",
+        desc: "This project was my first time building a website with React, integrating it with the superhero-api, and implementing Redux for state management. The website allows users to store and look up details about their chosen hero or villain, and even battle them to determine the winner, all styled with pure CSS!",
         link: "https://comic-wiki.web.app/",
-        techStack: ["React", "CSS"]
+        techStack: ["React", "Redux", "CSS"]
     }
 ]
 
 
 ---
 <div class="flex-col space-y-10">
-    <SectionTitle text="Projects" />
+    <SectionTitle text="Digital Builds" />
     <div class="grid grid-cols-1 gap-[6rem]">
         {
             projects.map(project => (

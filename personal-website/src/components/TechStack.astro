@@ -14,7 +14,7 @@ const skills: {text: string, link: string}[] = [
 ---
 <div class="flex-col space-y-10">
     <SectionTitle text="Development Stack" />
-    <div class="grid grid-cols-3 gap-[1rem]">
+    <div class="grid grid-cols-3 max-md:grid-cols-2 gap-[1rem]">
         {
             skills.map(skill => (
                 // <div class="box">

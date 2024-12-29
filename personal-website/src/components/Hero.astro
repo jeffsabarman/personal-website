@@ -3,14 +3,14 @@ import ButtonLink from "./shared/ButtonLink.astro";
 import {linkToEmail} from "@utils/shared"
 
 ---
-<div class="py-[2rem] flex-col space-y-[2.8rem]">
+<div class="py-[2rem] max-md:py-[1rem] flex-col space-y-[2.8rem]">
     <!-- <div class="flex-col">
         <p class="text-white font-thin text-sm">Hi, my name is</p>
         <p class="text-white font-medium text-3xl">Jeffrey Triandi Sabarman</p>
         <p class="text-orange font-semibold text-2xl">Front End Engineer</p>
     </div>
 </div> -->
-    <p class="text-xl">I'm a web developer currently doing a master's in Data Science and AI in Liverpool, UK</p>
+    <p class="text-xl max-sm:text-lg">I'm a web developer currently doing a master's in Data Science and AI in Liverpool, UK</p>
     <!-- <button>Get in touch!</button> -->
      <div>
          <ButtonLink link={linkToEmail}>Get in touch!</ButtonLink>

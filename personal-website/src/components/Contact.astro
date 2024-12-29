@@ -36,7 +36,7 @@ const socials: {icon: React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> &
 ---
 <div class="flex-col space-y-12" id={idContactSection}>
     <SectionTitle text="Connect with me"/>
-    <div class="grid grid-cols-3 gap-[1rem]">
+    <div class="grid grid-cols-3 max-md:grid-cols-1 gap-[1rem]">
         <!-- {
             socials.map(social => (
                 <a href={social.link} target="_blank" class="hover:cursor-pointer">

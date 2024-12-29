@@ -51,10 +51,10 @@ const projects: {title: string, year: number, image: ImageMetadata, desc: string
                             </div>
                             <p class="text-sm">{project.desc}</p>
                         </div>
-                        <div class="flex space-x-4">
+                        <div class="flex flex-wrap">
                                 {
                                     project.techStack.map(tech => (
-                                        <div class="">
+                                        <div class="mr-4">
                                             <p class="text-orange">{tech}</p>
                                         </div>
                                     ))

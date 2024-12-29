@@ -7,6 +7,7 @@ import Header from "@components/Header/index.astro"
 import Hero from "@components/Hero.astro"
 
 const { pageTitle } = Astro.props;
+const layoutResponsive = "max-[1450px]:px-[20vw] max-[1050px]:px-[14vw] max-[800px]:px-[10vw]"
 ---
 
 <!doctype html>
@@ -21,7 +22,7 @@ const { pageTitle } = Astro.props;
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<div class="px-[26vw] py-[2.4rem] flex flex-col space-y-[6rem]">
+		<div class={`px-[26vw] py-[2.4rem] flex flex-col space-y-[6rem] ${layoutResponsive}`}>
 			<Header />
 			<!-- <Hero /> -->
 			<slot />
@@ -48,6 +49,9 @@ const { pageTitle } = Astro.props;
 		font-family: poppins, sans-serif;
 		font-size: 16px;
 		color: #41444B;
+		@media screen and (max-width: 640px ) {
+			font-size: 14px;
+		}
 	}
 	/* code {
 		font-family:

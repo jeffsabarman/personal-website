@@ -1,21 +1,45 @@
 ---
+import PhilosophyCard from "./PhilosophyCard.astro";
 import SectionTitle from "./shared/SectionTitle.astro";
-// import {Image} from "astro:assets"
-import SWPCImage from "@assets/swpc.webp"
-import ComicWikiImage from "@assets/comic-wiki.webp"
-import WeddingInvitationImage from "@assets/wedding-invitation.webp"
-import ButtonLink from "./shared/ButtonLink.astro";
+
+const philosophies = [
+    {
+        title: "Designed with intention",
+        content: "Good products don't need to be loud. I appreciate thoughtful spacing, clear hierarchy, and subtle motion that makes an interface feel refined without becoming distracting."
+    },
+    {
+        title: "Built on strong foundations",
+        content: "A polished interface is only as good as the system behind it. I care about writing maintainable code, designing scalable architecture, and building products that remain easy to evolve over time."
+    },
+    {
+        title: "AI where it belongs",
+        content: "Good products don't need to be loud. I appreciate thoughtful spacing, clear hierarchy, and subtle motion that makes an interface feel refined without becoming distracting."
+    },
+]
 
 
 ---
 <div class="flex-col space-y-10">
-    <SectionTitle text="My Journey" />
-    <p class="text-sm">
-        I started in Industrial Engineering, which gave me a systems mindset, a grounding in statistics, and an instinct for optimisation. That foundation led me into software engineering and eventually into building AI-powered products. 
-    </p>
-    <p class="text-sm">
+    <SectionTitle text="How I Build" />
+    <div class="flex-col space-y-4">
+        <p class="text-sm">
+            I started in Industrial Engineering, where I learned to think in systems and solve complex problems through optimisation.
+        </p>
+        <p class="text-sm">
+            That mindset has shaped how I approach software engineering today, from designing intuitive interfaces to building reliable systems behind them.
+        </p>
+    </div>
+    <div class="flex-col space-y-4">
+        {
+            philosophies.map(p => 
+                <PhilosophyCard title={p.title} content={p.content} />
+            )
+        }
+    </div>
+    <!-- <p class="text-sm">
         I'm a Software Engineer at Quaisr in London, working across frontend and backend on an agentic AI product. Previously, I spent three years at LoveCare, a healthcare platform in Indonesia, where I built production features and explored how AI can improve healthcare workflows. I also hold an MSc in Data Science and AI with Distinction from the University of Liverpool.
-    </p>
+    </p> -->
+
 </div>
 <style>
 

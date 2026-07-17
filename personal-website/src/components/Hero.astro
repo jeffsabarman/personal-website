@@ -1,6 +1,6 @@
 ---
 import ButtonLink from "./shared/ButtonLink.astro";
-import {linkToEmail} from "@utils/shared"
+import {linkToEmail, linkToCV} from "@utils/shared"
 
 ---
 <div class="py-[2rem] max-md:py-[1rem] flex-col space-y-[2.8rem]">
@@ -19,8 +19,9 @@ import {linkToEmail} from "@utils/shared"
         Software Engineer · London, UK
     </p>
     <!-- <button>Get in touch!</button> -->
-     <div>
+     <div class="space-x-6"> 
          <ButtonLink link={linkToEmail}>Get in touch!</ButtonLink>
+         <ButtonLink link={linkToCV} variant="secondary">View CV</ButtonLink>
      </div>
 </div>
 <style>

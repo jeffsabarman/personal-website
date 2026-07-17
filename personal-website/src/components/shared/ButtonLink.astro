@@ -2,12 +2,15 @@
 interface Props {
     link: string
     fullwidth?: boolean
+    variant?: "primary" | "secondary"
 }
 
-const {link, fullwidth} = Astro.props
+const {link, fullwidth, variant="primary"} = Astro.props
 ---
 <a href={link} target="_blank">
-    <button class={fullwidth ? "w-full": ""}>
+    <button 
+    class={`${fullwidth ? "w-full": ""} ${variant}`}
+    >
     <p class=""><slot /></p>
 </button>
 </a>
@@ -17,14 +20,24 @@ const {link, fullwidth} = Astro.props
         /* background-color: #80C4E9; */
         padding: 0.6rem 1rem;
         border-radius: 0.2rem;
-        /* color: #ffffff; */
-        color: theme('colors.dark-blue');
-        border: 0.1rem solid theme('colors.dark-blue');
+        border-width: 0.1rem;
+        border-style: solid;
     }
-    button:hover {
+    button.primary {
+        color: theme('colors.dark-blue');
+        border-color: theme('colors.dark-blue');
+    }
+    button.primary:hover {
         /* opacity: 80%; */
         /* background-color: theme("colors.dark-blue"); */
         /* color: theme("colors.light-orange"); */
         background-color: #ecf5fc;
+    }
+    button.secondary {
+        color: theme('colors.light-orange');
+        border-color: theme('colors.light-orange');
+    }
+    button.secondary:hover {
+        background-color: #f8f0ea;
     }
 </style>

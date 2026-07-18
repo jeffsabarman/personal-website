@@ -1,0 +1,99 @@
+---
+import ButtonLink from "./shared/ButtonLink.astro"
+import SectionTitle from "./shared/SectionTitle.astro"
+import colors from "tailwindcss/colors"
+
+const skills: { subsection: string; items: string[] }[] = [
+    {
+        subsection: "Languages",
+        items: [
+            "TypeScript",
+            "JavaScript",
+            "Python",
+            "SQL"
+        ]
+    },
+    {
+        subsection: "Frontend",
+        items: [
+            "React",
+            "Next.js",
+            "Tailwind CSS",
+            "Material UI",
+            "Framer Motion"
+        ]
+    },
+    {
+        subsection: "AI",
+        items: [
+            "Pydantic AI",
+            "MCP",
+            "OpenAI API",
+            "Prompt Engineering"
+        ]
+    },
+    {
+        subsection: "Backend & Tools",
+        items: [
+            "Node.js",
+            "GraphQL",
+            "MongoDB",
+            "Git",
+            "Docker",
+            "Playwright",
+            // "Cypress"
+        ]
+    }
+]
+
+
+
+---
+<div class="flex-col space-y-10">
+    <SectionTitle text="What I work with" />
+    <div class="grid grid-cols-2 max-md:grid-cols-2 gap-[2rem]">
+        {
+            skills.map(skill => (
+                <div class="flex-col space-y-2">
+                    <p class="text-sm font-semibold text-dark-blue">{skill.subsection}</p>
+                    {/* <hr class="w-[1.2rem]" /> */}
+                    {/* <div class="flex-col space-y-2"> */}
+                    {
+                        skill.items.map(item => (
+                            <p class="text-sm">{item}</p>
+                        ))
+                    }
+                    {/* </div> */}
+                </div>
+            ))
+        }
+    </div>
+    <p class="text-sm"><span class="font-medium">Currently exploring:</span> C# and .NET</p>
+    <!-- {
+        skills.map(skill => (
+                <div class="flex-col space-y-6">
+            <p class="text-sm">
+                {skill.subsection}
+            </p>
+            <div class="grid grid-cols-3 max-md:grid-cols-2 gap-[1rem]">
+                {
+                    skill.skillItems.map(skillItem => (
+                        // <div class="box">
+                        //     <p class="">{skill}</p>
+                        // </div>
+                        <ButtonLink link={skillItem.link} fullwidth>{skillItem.text}</ButtonLink>
+                    ))
+                }
+            </div>
+    </div>
+            ))
+        } -->
+</div>
+<style>
+    hr {
+        /* background-color: #295F98; */
+        background-color: #F6995C;
+        border: none;
+        height: 0.16rem;
+    }
+</style>

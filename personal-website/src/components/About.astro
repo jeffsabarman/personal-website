@@ -21,7 +21,7 @@ const philosophies = [
 ---
 <div class="flex-col space-y-10">
     <SectionTitle text="How I Build" />
-    <div class="flex-col space-y-4">
+    <div class="flex-col space-y-6">
         <p class="text-sm">
             I started in Industrial Engineering, where I learned to think in systems and solve complex problems through optimisation.
         </p>
@@ -29,13 +29,11 @@ const philosophies = [
             That mindset has shaped how I approach software engineering today, from designing intuitive interfaces to building reliable systems behind them.
         </p>
     </div>
-    <div class="flex-col space-y-4">
-        {
-            philosophies.map(p => 
-                <PhilosophyCard title={p.title} content={p.content} />
-            )
-        }
-    </div>
+    {
+        philosophies.map(p => 
+            <PhilosophyCard title={p.title} content={p.content} />
+        )
+    }
     <!-- <p class="text-sm">
         I'm a Software Engineer at Quaisr in London, working across frontend and backend on an agentic AI product. Previously, I spent three years at LoveCare, a healthcare platform in Indonesia, where I built production features and explored how AI can improve healthcare workflows. I also hold an MSc in Data Science and AI with Distinction from the University of Liverpool.
     </p> -->

@@ -2,7 +2,7 @@
 // import Card from "./Card.astro"
 // import {Icon} from "astro-icon/components"
 import {idContactMenu} from "@utils/shared"
-import ToggleMode from "./ToggleMode"
+import ThemeToggle from "./ThemeToggle"
 ---
 
 
@@ -26,13 +26,15 @@ import ToggleMode from "./ToggleMode"
         <p class="text-sm name-text text-dark-blue font-semibold">Jeffrey</p>
         <p class="text-sm name-text text-orange font-semibold ml-8">Sabarman</p>
     </div>
-    <div class="flex space-x-6">
+    <div class="flex justify-center space-x-6 items-center">
         <div class="flex space-x-20">
             <!-- <p class="text-sm">About</p> -->
             <!-- <p class="text-sm">Projects</p> -->
             <p class="text-sm hover:cursor-pointer hover:text-dark-blue" id={idContactMenu}>Contact</p>
         </div>
-        <!-- <ToggleMode /> -->
+        <div class="flex items-center">
+            <ThemeToggle client:load />
+        </div>
     </div>
 </div>
 <style>

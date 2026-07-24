@@ -24,8 +24,20 @@ const layoutResponsive = "max-[1450px]:px-[20vw] max-[1050px]:px-[14vw] max-[800
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<script is:inline>
+			const theme = localStorage.getItem("theme");
+
+			if (
+				theme === "dark" || 
+				(!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+			) {
+				document.documentElement.classList.add("dark")
+			} else {
+				document.documentElement.classList.remove("dark")
+			}
+		</script>
 	</head>
-	<body class="text-gray-600">
+	<body>
 		<div class={`px-[26vw] py-[2.4rem] flex flex-col space-y-[6rem] ${layoutResponsive}`}>
 			<Header />
 			<!-- <Hero /> -->
@@ -46,9 +58,22 @@ const layoutResponsive = "max-[1450px]:px-[20vw] max-[1050px]:px-[14vw] max-[800
 		);
 	} */
 	:root {
-		/* background-color: #292B3C; */
+		/* background-color: #292B3C; // dark mode */
 		/* background-color: #FCF8F3; */
-		background-color: #FFFFFF;
+		/* background-color: #FFFFFF; */
+		--background: #FFFFFF;
+		--text-color: theme("colors.gray.600");
+		--color-dark-blue: #295F98;
+	}
+	.dark {
+		--background: #292B3C;
+		--text-color: theme("colors.gray.300");
+		/* --color-dark-blue: #3a85d4; */
+		--color-dark-blue: #4999ee;
+	}
+	body {
+		background-color: var(--background);
+		color: var(--text-color);
 	}
 	html {
 		font-family: poppins, sans-serif;

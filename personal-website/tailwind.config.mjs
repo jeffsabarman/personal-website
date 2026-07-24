@@ -2,6 +2,7 @@
 import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
+  darkMode: "class",
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
@@ -11,9 +12,10 @@ export default {
         // "blue-light": "#80C4E9",
         orange: "#F6995C",
         "light-orange": "#EF9C66",
-        "dark-blue": "#295F98",
-        "light-blue": "#80C4E9",
-        default: "#41444B",
+        // "dark-blue": "#295F98",
+        "dark-blue": "var(--color-dark-blue)"
+        // "light-blue": "#80C4E9",
+        // default: "#41444B",
       }
     },
     // fontFamily: {

@@ -26,6 +26,7 @@ const {link, fullwidth, variant="primary"} = Astro.props
     button.primary {
         color: theme('colors.dark-blue');
         border-color: theme('colors.dark-blue');
+        background-color: transparent;
     }
     button.primary:hover {
         /* opacity: 80%; */
@@ -33,11 +34,22 @@ const {link, fullwidth, variant="primary"} = Astro.props
         /* color: theme("colors.light-orange"); */
         background-color: #ecf5fc;
     }
+    :global(html.dark) button.primary {
+        color: white;
+        background-color: #295F98;
+        border-color: transparent;
+    }
+    :global(html.dark) button.primary:hover {
+        background-color: #214c7a;
+    }
     button.secondary {
         color: theme('colors.light-orange');
         border-color: theme('colors.light-orange');
     }
     button.secondary:hover {
         background-color: #f8f0ea;
+    }
+    :global(html.dark) button.secondary:hover {
+        background-color: #412919;
     }
 </style>
